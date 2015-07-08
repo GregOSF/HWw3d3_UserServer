@@ -49,16 +49,6 @@ app.post ('/users', function(req, res) {
 
 	users.push(newUser)
 	res.json(newUser);
-
-	/*var Greg = [{
-		'id': 24,
-		'username': 'Greg',
-		'firstname': 'Greg',
-		'lastname': 'Onza',
-		'age': 31
-	}];*/
-
-
 });
 
 app.put('/users/:id', function(req, res){
