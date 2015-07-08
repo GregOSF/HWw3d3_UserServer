@@ -38,11 +38,12 @@ app.get ('/users', function(req, res) {
 	res.json(users);
 })
 
-/*app.get ('/users/:id', function(req, res) {
+app.get ('/users/:id', function(req, res) {
 	var getID = parseInt(req.params.id);
-	res.json(this.users.getID);
-})
-*/
+	var foundUser = _.findWhere(users, {id: getID});
+	res.json(foundUser);
+})	
+
 app.post ('/users', function(req, res) {
 	var newUser = req.body;
 
