@@ -3,6 +3,14 @@ var bodyParser = require('body-parser');
 var app = express();
 var _ = require('underscore');
 
+// serve js and css files from public folder
+app.use(express.static(__dirname + '/public'));
+/*app.use(express.static(__dirname + '/public'))*/
+
+/*serve html file*/
+app.get('/', function (req, res) {
+  res.sendFile(__dirname + '/public/index.html');
+});
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
